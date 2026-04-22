@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.work {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+*, *::before, *::after {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.work::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: -60px;
+  height: 150px;
+  width: 30px;
+  background: rgb(212, 212, 212);
+  opacity: 0.8;
+  filter: blur(8px);
+  transform: rotate(25deg);
+  transition: 0.7s ease;
+}
+
+.work:hover::before {
+  transform: translateX(350px) rotate(25deg);
+}
+.home-page{
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  } 
+  100% {
+    opacity: 1;
+  } 
+} 
