@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import PageTransition from "./components/transition";
+import Footer from "./components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -72,12 +73,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           `
         }} />
       </head>
-      <body className={inter.className}>
-        <PageTransition />
-        <div id="page-wrapper">
-          {children}
-        </div>
-      </body>
+     <body className={inter.className}>
+  <PageTransition />
+
+  <div id="page-wrapper" className="min-h-screen flex flex-col">
+    <main className="flex-1">
+      {children}
+    </main>
+
+
+  </div>
+</body>
     </html>
   );
 }
