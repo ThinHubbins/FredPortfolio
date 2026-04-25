@@ -216,14 +216,14 @@ export default function Home() {
               </div>
 
               {/* Project — Sitcity */}
-              <div className="p-5 sm:p-6 flex flex-col sm:flex-row gap-5 dark:border-white/10">
+              <div className="p-5 sm:p-6 flex flex-col lg:flex-row gap-5 dark:border-white/10">
                 <div className="relative shrink-0 w-full sm:w-[220px]">
                   <Image
                     src="/sitcity1.png"
                     alt="SitCity"
                     width={220}
                     height={140}
-                    className="rounded-lg p-1 border border-gray-300 dark:border-gray-600 object-cover w-full sm:w-[220px] h-[140px]"
+                    className="rounded-lg p-1 border border-gray-300 dark:border-gray-600 object-cover sm:w-[220px] h-[140px]"
                   />
                   <div className="absolute bottom-2 left-2">
                     <a
@@ -250,14 +250,14 @@ export default function Home() {
               </div>
 
               {/* Project — LuxHome */}
-              <div className="p-5 sm:p-6 flex flex-col sm:flex-row gap-5">
+              <div className="p-5 sm:p-6 flex flex-col lg:flex-col xl:flex-row gap-5">
                 <div className="relative shrink-0 w-full sm:w-[220px]">
                   <Image
                     src="/luxhome.png"
                     alt="LuxHome"
                     width={220}
                     height={140}
-                    className="rounded-lg p-1 border border-gray-300 dark:border-gray-600 object-cover w-full sm:w-[220px] h-[140px]"
+                    className="rounded-lg p-1 border border-gray-300 dark:border-gray-600 object-cover sm:w-[220px] h-[140px]"
                   />
                   <div className="absolute bottom-2 left-2">
                     <a
@@ -325,7 +325,7 @@ export default function Home() {
                 and Bootstrap for responsive UI, and GSAP for smooth animations.
               </span>
 
-              <div className="flex flex-col sm:flex-row gap-5 dark:border-white/10">
+              <div className="flex flex-col lg:flex-row gap-5 dark:border-white/10">
                 <div className="relative shrink-0 w-[220px]">
                   <Image
                     src="/sitcity1.png"
@@ -384,7 +384,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex flex-col mt-5 sm:flex-row gap-5 dark:border-white/10">
+              <div className="flex mt-5 flex-col xl:flex-row gap-5 dark:border-white/10">
                 <div className="relative shrink-0 w-[220px]">
                   <Image
                     src="/luxhome.png"
@@ -462,7 +462,7 @@ export default function Home() {
                 and efficient data handling.
               </span>
 
-              <div className="flex flex-col sm:flex-row gap-5 dark:border-white/10">
+              <div className="flex flex-col xl:flex-row gap-5 dark:border-white/10">
                 <div className="relative shrink-0 w-[220px]">
                   <Image
                     src="/ghostpen.png"
@@ -517,6 +517,16 @@ export default function Home() {
                         className="color-invert rounded-full"
                       />
                       <span>MongoDB</span>
+                    </div>
+                    <div className="flex bg-gray-200 dark:bg-gray-700 items-center border border-gray-300 dark:border-gray-600 rounded-full px-2 gap-2 mt-4">
+                      <Image
+                        src="/expressjs.svg"
+                        alt="expressjs"
+                        width={20}
+                        height={20}
+                        className="color-invert rounded-full"
+                      />
+                      <span>Express.js</span>
                     </div>
                     <div className="flex bg-gray-200 dark:bg-gray-700 items-center border border-gray-300 dark:border-gray-600 rounded-full px-2 gap-2 mt-4">
                       <Image
