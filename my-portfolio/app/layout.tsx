@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://odinaka.com"),
+  metadataBase: new URL("https://chinweze-fredrick.onrender.com/"),
 
   title: {
     default: "Fredrick Chinweze | Full-Stack Web Developer in Nigeria",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     title: "Fredrick Chinweze | Full-Stack Web Developer in Nigeria",
     description:
       "Portfolio of Fredrick Chinweze — full-stack developer building modern digital experiences with React, Next.js, MERN stack, and scalable architecture.",
-    url: "https://odinaka.com",
+    url: "https://chinweze-fredrick.onrender.com/",
     siteName: "Fredrick Portfolio",
     locale: "en_US",
     type: "website",
@@ -111,8 +111,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Fredrick Chinweze",
-    url: "https://odinaka.com",
-    image: "https://odinaka.com/pfp.png",
+    url: "https://chinweze-fredrick.onrender.com/",
+    image: "https://chinweze-fredrick.onrender.com//pfp.png",
     jobTitle: "Full-Stack Web Developer",
     description:
       "Full-stack web developer specializing in React, Next.js, MERN stack, and modern UI engineering.",
