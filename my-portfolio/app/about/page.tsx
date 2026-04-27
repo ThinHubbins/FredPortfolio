@@ -91,10 +91,13 @@ export default function Home() {
           {/* ── INTRODUCTION ── */}
           <section id="introduction">
             <div className="flex items-center flex-col md:items-start">
-              <Link
-                href="/work"
+              <a
+                href="https://cal.com/fredy-chinweze-ojsasb/project-discovery-call"
+                      target="_blank"
+                      rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 sm:gap-3 bg-black/10 hover:bg-black/20 dark:bg-white/10 dark:hover:bg-white/20 font-semibold rounded-full border border-black/20 dark:border-white/20 px-3 py-1.5 mb-8 transition-colors duration-200"
               >
+                
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -123,7 +126,7 @@ export default function Home() {
                     />
                   </svg>
                 </span>
-              </Link>
+              </a>
 
               <h1 className="text-xl sm:text-2xl lg:text-4xl font-extrabold sm:mb-4 text-black dark:text-white leading-tight">
                 Chinweze Fredrick
@@ -133,7 +136,8 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-3 mt-2 mb-8">
                 <a
-                  href=""
+                  href="https://github.com/ThinHubbins"
+                  target="_blank"
                   className="p-2 sm:px-3 sm:py-1.5 border border-gray-200 dark:border-white/10 flex items-center gap-2 rounded-full bg-gray-100 dark:bg-white/5 hover:bg-gray-200 dark:hover:bg-white/20 transition-colors duration-300"
                 >
                   <Image
@@ -147,7 +151,8 @@ export default function Home() {
                 </a>
 
                 <a
-                  href=""
+                  href="mailto:fredychinweze@gmail.com"
+                  target="_blank"
                   className="p-2 sm:px-3 sm:py-1.5 border border-gray-200 dark:border-white/10 flex items-center gap-2 rounded-full bg-gray-100 dark:bg-white/5 hover:bg-gray-200 dark:hover:bg-white/20 transition-colors duration-300"
                 >
                   <Image
@@ -161,7 +166,8 @@ export default function Home() {
                 </a>
 
                 <a
-                  href=""
+                  href="https://www.instagram.com/fredy__art?igsh=a3pkYWJ5eHYwN3Ex"
+                  target="_blank"
                   className="p-2 sm:px-3 sm:py-1.5 border border-gray-200 dark:border-white/10 flex items-center gap-2 rounded-full bg-gray-100 dark:bg-white/5 hover:bg-gray-200 dark:hover:bg-white/20 transition-colors duration-300"
                 >
                   <Image
@@ -538,8 +544,8 @@ export default function Home() {
                       />
                       <span>Bootstrap</span>
                     </div>
-                    </div>
-                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </section>

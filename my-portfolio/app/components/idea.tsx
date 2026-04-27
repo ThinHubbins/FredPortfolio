@@ -247,14 +247,19 @@ export default function CardStack() {
           </p>
 
           <div className="relative z-10 flex flex-col sm:flex-row items-center gap-3 w-full max-w-md">
+            <form action="https://formspree.io/f/mbdqvrbl"
+                      method="POST">
             <input
               type="email"
+              name="email"
+              required
               placeholder="your@email.com"
               className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm"
             />
-            <button className="w-full sm:w-auto whitespace-nowrap px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold rounded-xl hover:bg-gray-700 dark:hover:bg-gray-500 transition-all duration-300 text-sm">
+            <button className="w-full mt-2 sm:w-auto whitespace-nowrap px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold rounded-xl hover:bg-gray-700 dark:hover:bg-gray-500 transition-all duration-300 text-sm">
               Subscribe →
             </button>
+            </form>
           </div>
 
           <p className="relative z-10 text-xs text-gray-400 dark:text-gray-600 mt-4">
