@@ -93,11 +93,10 @@ export default function Home() {
             <div className="flex items-center flex-col md:items-start">
               <a
                 href="https://cal.com/fredy-chinweze-ojsasb/project-discovery-call"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 sm:gap-3 bg-black/10 hover:bg-black/20 dark:bg-white/10 dark:hover:bg-white/20 font-semibold rounded-full border border-black/20 dark:border-white/20 px-3 py-1.5 mb-8 transition-colors duration-200"
               >
-                
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -231,14 +230,27 @@ export default function Home() {
                     height={140}
                     className="rounded-lg p-1 border border-gray-300 dark:border-gray-600 object-cover sm:w-[220px] h-[140px]"
                   />
-                  <div className="absolute bottom-2 left-2">
+                  <div className="absolute bottom-2 left-2 flex flex-row">
                     <a
                       href="https://sitcity-ab19.onrender.com/"
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="group"
                     >
-                      <span className="text-white bg-black/60 hover:bg-black/80 transition px-2.5 py-1 rounded-md text-xs">
-                        SitCity ↗
+                      <span className="flex items-center gap-1 text-white bg-black/60 hover:bg-black/80 transition px-2.5 py-1 rounded-md text-xs">
+                        SitCity
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M8.25 3.75H19.5a.75.75 0 0 1 .75.75v11.25a.75.75 0 0 1-1.5 0V6.31L5.03 20.03a.75.75 0 0 1-1.06-1.06L17.69 5.25H8.25a.75.75 0 0 1 0-1.5Z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
                       </span>
                     </a>
                   </div>
@@ -265,14 +277,27 @@ export default function Home() {
                     height={140}
                     className="rounded-lg p-1 border border-gray-300 dark:border-gray-600 object-cover sm:w-[220px] h-[140px]"
                   />
-                  <div className="absolute bottom-2 left-2">
+                  <div className="absolute bottom-2 left-2 flex flex-row">
                     <a
                       href="https://luxhome.archsaintnexus.com/"
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="group"
                     >
-                      <span className="text-white bg-black/60 hover:bg-black/80 transition px-2.5 py-1 rounded-md text-xs">
-                        LuxHome ↗
+                      <span className="flex items-center gap-1 text-white bg-black/60 hover:bg-black/80 transition px-2.5 py-1 rounded-md text-xs">
+                        LuxHome
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M8.25 3.75H19.5a.75.75 0 0 1 .75.75v11.25a.75.75 0 0 1-1.5 0V6.31L5.03 20.03a.75.75 0 0 1-1.06-1.06L17.69 5.25H8.25a.75.75 0 0 1 0-1.5Z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
                       </span>
                     </a>
                   </div>
@@ -297,21 +322,21 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-black dark:text-white">
               Studies
             </h2>
-            <div className="flex flex-col">
+            <div className="flex flex-col ml-5">
               <div className="flex flex-col">
-                <span className="text-xl font-semibold text-black dark:text-white">
+                <span className="text-lg font-semibold text-black dark:text-white">
                   Ekiti State University
                 </span>
-                <span className="text-md text-gray-600 dark:text-gray-400 font-semibold">
-                  Studied Geolophysics
+                <span className="text-sm text-gray-600 dark:text-gray-400 font-semibold">
+                  Studied Applied Geophysics
                 </span>
               </div>
 
               <div className="flex mt-10 flex-col">
-                <span className="text-xl font-semibold text-black dark:text-white">
-                  {`<h1> Code Tech Academy </h1>`}
+                <span className="text-lg font-semibold text-black dark:text-white">
+                  {`~Scripts-TECHs Academy`}
                 </span>
-                <span className="text-md text-gray-600 dark:text-gray-400 font-semibold">
+                <span className="text-sm text-gray-600 dark:text-gray-400 font-semibold">
                   Studied Full-Stack Web Development (MERN Stack)
                 </span>
               </div>
@@ -340,14 +365,27 @@ export default function Home() {
                     height={140}
                     className="rounded-lg p-1 border border-gray-300 dark:border-gray-600 object-cover w-[220px] h-[140px]"
                   />
-                  <div className="absolute bottom-2 left-2">
+                  <div className="absolute bottom-2 left-2 flex flex-row">
                     <a
                       href="https://sitcity-ab19.onrender.com/"
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="group"
                     >
-                      <span className="text-white bg-black/60 hover:bg-black/80 transition px-2.5 py-1 rounded-md text-xs">
-                        SitCity ↗
+                      <span className="flex items-center gap-1 text-white bg-black/60 hover:bg-black/80 transition px-2.5 py-1 rounded-md text-xs">
+                        SitCity
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M8.25 3.75H19.5a.75.75 0 0 1 .75.75v11.25a.75.75 0 0 1-1.5 0V6.31L5.03 20.03a.75.75 0 0 1-1.06-1.06L17.69 5.25H8.25a.75.75 0 0 1 0-1.5Z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
                       </span>
                     </a>
                   </div>
@@ -399,14 +437,27 @@ export default function Home() {
                     height={140}
                     className="rounded-lg p-1 border border-gray-300 dark:border-gray-600 object-cover w-[220px] h-[140px]"
                   />
-                  <div className="absolute bottom-2 left-2">
+                  <div className="absolute bottom-2 left-2 flex flex-row">
                     <a
                       href="https://luxhome.archsaintnexus.com/"
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="group"
                     >
-                      <span className="text-white bg-black/60 hover:bg-black/80 transition px-2.5 py-1 rounded-md text-xs">
-                        LuxHome ↗
+                      <span className="flex items-center gap-1 text-white bg-black/60 hover:bg-black/80 transition px-2.5 py-1 rounded-md text-xs">
+                        LuxHome
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M8.25 3.75H19.5a.75.75 0 0 1 .75.75v11.25a.75.75 0 0 1-1.5 0V6.31L5.03 20.03a.75.75 0 0 1-1.06-1.06L17.69 5.25H8.25a.75.75 0 0 1 0-1.5Z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
                       </span>
                     </a>
                   </div>
@@ -477,14 +528,27 @@ export default function Home() {
                     height={140}
                     className="rounded-lg p-1 border border-gray-300 dark:border-gray-600 object-cover w-[220px] h-[140px]"
                   />
-                  <div className="absolute bottom-2 left-2">
+                  <div className="absolute bottom-2 left-2 flex flex-row">
                     <a
                       href="https://ghost-pen-mu.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="group"
                     >
-                      <span className="text-white bg-black/60 hover:bg-black/80 transition px-2.5 py-1 rounded-md text-xs">
-                        GhostPen ↗
+                      <span className="flex items-center gap-1 text-white bg-black/60 hover:bg-black/80 transition px-2.5 py-1 rounded-md text-xs">
+                        GhostPen
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M8.25 3.75H19.5a.75.75 0 0 1 .75.75v11.25a.75.75 0 0 1-1.5 0V6.31L5.03 20.03a.75.75 0 0 1-1.06-1.06L17.69 5.25H8.25a.75.75 0 0 1 0-1.5Z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
                       </span>
                     </a>
                   </div>
