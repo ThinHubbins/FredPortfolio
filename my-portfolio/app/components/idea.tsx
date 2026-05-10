@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Footer from "./footer";
 import Image from "next/image";
+import { supabase } from "../lib/supabase";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,9 +13,9 @@ const cards = [
   {
     num: "01",
     tag: "Platform",
-    title: "Two platform,\none login",
-    sub: "Switch between Scholar and Vendor anytime — your account follow you everywhere",
-    cta: "One account. Plenty possibilities dey oo my brothers and sisters !!.",
+    title: "One Nest.\nEvery tool.",
+    sub: "YouTube tutorials, GitHub repos, Discord chats — all scattered. DevNest puts your entire dev journey in one focused place.",
+    cta: "Stop tab-switching. Start building.",
     bg: "#26215C",
     text: "#EEEDFE",
     muted: "#AFA9EC",
@@ -22,10 +23,10 @@ const cards = [
   },
   {
     num: "02",
-    tag: "Scholar",
-    title: "Your courses.\nYour rooms.",
-    sub: "Every course for your school get im own live study room — join the ones wey you dey offer",
-    cta: "Read sharp, no do alone.",
+    tag: "Learn",
+    title: "Structured paths,\nnot tutorial hell.",
+    sub: "Follow a real learning flow — courses, resources, and a built-in code editor with AI debugging. No more blank-file paralysis.",
+    cta: "Learn → Build → Ship. All in one Nest.",
     bg: "#04342C",
     text: "#E1F5EE",
     muted: "#5DCAA5",
@@ -33,10 +34,10 @@ const cards = [
   },
   {
     num: "03",
-    tag: "Marketplace",
-    title: "Buy and sell\nfor campus sef dey!!",
-    sub: "Textbooks, gadgets, cloths — na students for your school dey sell am, no be random people online",
-    cta: "Your campus. Your market.",
+    tag: "Community",
+    title: "Ask, debug,\ngrow together.",
+    sub: "Structured Q&A, AI hint system, and a feed that keeps you in the loop — cleaner than Discord, smarter than a forum.",
+    cta: "Get unstuck in seconds, not days.",
     bg: "#712B13",
     text: "#FAECE7",
     muted: "#F0997B",
@@ -44,10 +45,10 @@ const cards = [
   },
   {
     num: "04",
-    tag: "Vendor",
-    title: "Sell more,\npay less",
-    sub: "As your sales dey grow, you go rank up — commission go drop from 25% reach 5%",
-    cta: "The more you sell, the more money remain your hand.",
+    tag: "Creators",
+    title: "Teach it.\nMonetize it.",
+    sub: "Launch a free or paid Nest, gate premium content behind tokens, and earn while your community grows — 90% revenue stays with you.",
+    cta: "Your knowledge. Your income.",
     bg: "#0C447C",
     text: "#E6F1FB",
     muted: "#85B7EB",
@@ -56,9 +57,9 @@ const cards = [
   {
     num: "05",
     tag: "Early Access",
-    title: "We dey come\nyour campus",
-    sub: "₦2,500 go give you 3 semesters full Scholar access — be among the first for your school",
-    cta: "Early access dey open soon →",
+    title: "Be the first\nin your Nest.",
+    sub: "Join now and lock in founding member perks — 20 free token unlocks/month, 40% discount on premium content, forever.",
+    cta: "Early access is open →",
     bg: "#5f1749",
     text: "#fce8f5",
     muted: "#d991c6",
@@ -70,7 +71,30 @@ export default function CardStack() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement[]>([]);
   const headerRef = useRef<HTMLDivElement>(null);
-  const ctxRef = useRef<gsap.Context | null>(null); // ← store GSAP context
+  const ctxRef = useRef<gsap.Context | null>(null);
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error" | "duplicate">("idle");
+
+  async function subscribe(e: React.FormEvent) {
+    e.preventDefault();
+    setStatus("loading");
+
+    const { error } = await supabase
+      .from("newsletter_subscribers")
+      .insert([{ email }]);
+
+    if (error) {
+      if (error.code === "23505") {
+        setStatus("duplicate");
+      } else {
+        console.log(error);
+        setStatus("error");
+      }
+    } else {
+      setEmail("");
+      setStatus("success");
+    }
+  }
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -78,8 +102,6 @@ export default function CardStack() {
 
     const STEP = 450;
 
-    // Wrap everything in a GSAP context scoped to the section
-    // This guarantees clean revert on unmount — no stale DOM refs
     ctxRef.current = gsap.context(() => {
       if (headerRef.current) {
         gsap.from(headerRef.current.children, {
@@ -117,11 +139,9 @@ export default function CardStack() {
         pin: true,
         pinSpacing: true,
       });
-    }, section); // ← scope to section element
+    }, section);
 
     return () => {
-      // ctx.revert() kills all tweens, ScrollTriggers, and DOM changes
-      // made inside this context — safe even if React already touched the DOM
       ctxRef.current?.revert();
     };
   }, []);
@@ -132,16 +152,15 @@ export default function CardStack() {
         ref={headerRef}
         className="flex flex-col items-center text-center px-6 pt-12 pb-8 gap-3 max-w-lg mx-auto"
       >
-        <span className="text-xs font-semibold tracking-[0.2em] uppercase text-purple-400 dark:text-purple-300">
+        <span className="text-xs font-semibold tracking-[0.2em] uppercase text-green-400 dark:text-green-300">
           I HAVE AN IDEA!!
         </span>
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 dark:text-white leading-tight">
-          Campus <span className="text-purple-500">Plug</span>
+          Dev<span className="text-green-500">Nest</span>
         </h1>
         <p className="text-sm md:text-lg text-gray-500 dark:text-gray-400 leading-relaxed">
-          The student platform that turns your campus into a community — study
-          together, trade together.
-        </p>
+  The developer platform where you learn, build, and ship — structured paths, AI-powered debugging, and a community that actually speaks your language.
+</p>
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
           <span className="text-xs text-gray-400 dark:text-gray-500">
@@ -218,18 +237,12 @@ export default function CardStack() {
           </div>
         ))}
       </div>
-      <footer className="w-full px-4 md:px-16 pb-10 mt-10">
 
+      <footer className="w-full px-4 md:px-16 pb-10 mt-10">
         <div className="relative overflow-hidden rounded-2xl border border-black/30 dark:border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-black px-8 py-14 mb-6 flex flex-col items-center justify-center text-center">
-        <div className="flex items-center justify-center">
-          <Image
-            src="/dogy.gif"
-            alt="Dogy"
-            width={100}
-            height={100}
-            className="w-24 h-24 sm:w-30 sm:h-30"
-          />
-        </div>
+          <div className="flex items-center justify-center">
+            <Image src="/dogy.gif" alt="Dogy" width={100} height={100} className="w-24 h-24 sm:w-30 sm:h-30" />
+          </div>
           <div className="absolute -top-10 -left-10 w-48 h-48 rounded-full bg-purple-100 dark:bg-purple-900/20 blur-2xl pointer-events-none" />
           <div className="absolute -bottom-10 -right-10 w-48 h-48 rounded-full bg-green-100 dark:bg-green-900/20 blur-2xl pointer-events-none" />
 
@@ -242,31 +255,43 @@ export default function CardStack() {
           </h2>
 
           <p className="relative z-10 text-gray-500 dark:text-gray-400 text-sm sm:text-base max-w-md mb-8">
-            Updates on my projects, experiments, and creative journey — straight
-            to your inbox.
+            Updates on my projects, experiments, and creative journey — straight to your inbox.
           </p>
 
           <div className="relative z-10 flex flex-col sm:flex-row items-center gap-3 w-full max-w-md">
-            <form action="https://formspree.io/f/mbdqvrbl"
-                      method="POST">
-            <input
-              type="email"
-              name="email"
-              required
-              placeholder="your@email.com"
-              className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm"
-            />
-            <button className="w-full mt-2 sm:w-auto whitespace-nowrap px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold rounded-xl hover:bg-gray-700 dark:hover:bg-gray-500 transition-all duration-300 text-sm">
-              Subscribe →
-            </button>
+            <form onSubmit={subscribe} className="w-full flex flex-col sm:flex-row gap-3">
+              <input
+                onChange={(e) => setEmail(e.target.value)}
+                type="email"
+                required
+                value={email}
+                placeholder="your@email.com"
+                className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm"
+              />
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className="w-full mt-2 sm:w-auto whitespace-nowrap px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold rounded-xl hover:bg-gray-700 dark:hover:bg-gray-500 transition-all duration-300 text-sm disabled:opacity-50"
+              >
+                {status === "loading" ? "Subscribing..." : "Subscribe →"}
+              </button>
             </form>
           </div>
+
+          {status === "success" && (
+            <p className="mt-3 text-sm text-green-500">You&apos;re subscribed! Thanks for joining.</p>
+          )}
+          {status === "duplicate" && (
+            <p className="mt-3 text-sm text-yellow-500">You&apos;re already subscribed!</p>
+          )}
+          {status === "error" && (
+            <p className="mt-3 text-sm text-red-500">Something went wrong. Please try again.</p>
+          )}
 
           <p className="relative z-10 text-xs text-gray-400 dark:text-gray-600 mt-4">
             No spam. Unsubscribe anytime.
           </p>
         </div>
-        
       </footer>
       <Footer />
     </>

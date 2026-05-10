@@ -5,6 +5,7 @@ import Idea from "./components/idea";
 
 export default function Home() {
 
+
   return (
     <main className="flex min-h-[115vh] md:min-h-screen flex-col items-center p-4 bg-white dark:bg-black text-black dark:text-white">
       <Navbar />

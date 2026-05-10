@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import PageTransition from "./components/transition";
@@ -96,6 +96,8 @@ export const metadata: Metadata = {
     google: "your-google-site-verification-code",
   },
 
+};
+export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#000000" },
